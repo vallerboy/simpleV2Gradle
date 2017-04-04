@@ -4,24 +4,22 @@ import java.io.*;
 
 public class Main {
     public static void main(String[] args) {
-      
-        Player player1 = Player.builder().age1(1)
-                .age(5)
-                .name("Siema")
-                .name3("Witaj")
-                .name1("takietam")
-                .age2(53).build();
+        Player player = new Player();
+        player.setAge(5);
+        player.setName("Oskar");
+        System.out.println(player.toString());
 
-        @Cleanup
-        InputStream in = null;
+
+
+
 
         try {
-          in = new FileInputStream(new File("tutaj_sciezka_do_pliku"));
-          //in.close();
+            @Cleanup
+            InputStream in = new FileInputStream(new File("tutaj_sciezka_do_pliku"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
-            e.printStackTrace();
+             e.printStackTrace();
         }
 
     }
